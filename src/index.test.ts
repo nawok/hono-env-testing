@@ -12,7 +12,7 @@ describe('Environment', () => {
 
     const env = await res.json();
     expect(env).toHaveProperty('MY_VAR');
-    expect(env.MY_VAR).toBe(process.env.MY_VAR);
+    expect(env.MY_VAR).toBe(process.env.MY_VAR); // passes
   });
 
   it('Should contain overrides from MOCK_ENV', async () => {
@@ -21,6 +21,6 @@ describe('Environment', () => {
 
     const env = await res.json();
     expect(env).toHaveProperty('MY_VAR');
-    expect(env.MY_VAR).toBe(MOCK_ENV.MY_VAR);
+    expect(env.MY_VAR).toBe(MOCK_ENV.MY_VAR); // fails
   });
 });
